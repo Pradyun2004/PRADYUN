@@ -1,120 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JNTUH Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f3f3f3;
+    }
 
-         *{
-            margin: 0;
-            text-transform: capitalize;
-         }
-          header{
-            text-align: center;
-            background-color: rgb(1, 18, 31);
-            padding: 30px;
-            
-            
-          }
-          header nav ul li {
-          display: inline;
-          margin: 0 15px;
-          list-style: none;
-           }
-           nav ul li a{
-            color: white;
-            text-decoration: none;
-           }
-           h1{
-            color: white;
-           }
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    }
 
-         header nav{
-            margin-top: 10px;
-         }
-         main {
-    margin: 20px;
-    background-color: #ffffff; /* White background for the main content */
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners for the main content area */
-    padding-left: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,1); /* Subtle shadow for depth */
-}
-        
-        section {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eeeeee; /* Separator for articles */
-}
-section h2 {
-    color: #333333; /* Dark text for titles */
-    margin-bottom: 10px;
-   
-}
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
 
-section {
-    color: #666666; /* Lighter text for the body */
-    line-height: 1.6; /* Improved readability */
-    padding-left: 15px;
-}
-         footer{
-            background-color: rgb(3, 24, 35);
-            color: white;
-            height: 60px;
-            text-align: center;
-            padding-top: 40px;
-         }
-         
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
+    button:hover {
+      background-color: #0056b3;
+    }
 
-    </style>
+    #gif-container {
+      margin-top: 20px;
+      display: none;
+    }
+
+    #gif-container img {
+      width: 300px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    
-   
+  <div class="container">
+    <h1>JNTUH Results</h1>
+    <p>Enter your PIN number to check the result:</p>
+    <form id="result-form">
+      <input type="text" id="pin-number" placeholder="Enter PIN Number" required />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="gif-container">
+      <img src='https://media1.tenor.com/m/cfK6NIxpR4MAAAAd/angry-macha.gif' alt="Moye Moye GIF">
+    </div>
+  </div>
 
-    <header>
-        <h1>my blog</h1>
-        <nav>
-            <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">about</a></li>
-                <li><a href="">contact</a></li>
-            </ul>
-        </nav>
+  <script>
+    document.getElementById('result-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent page reload
+      const pin = document.getElementById('pin-number').value;
 
-    </header>
+      if (pin.trim() === "") {
+        alert("Please enter a valid PIN number.");
+        return;
+      }
 
-    <main>
-
-       <section>
-
-         <h2 style="padding-top: 20px;">blog post title</h2>
-         <p>content of the first blog post.....</p>
-       </section>
-       <section>
-
-         <h2>another blog post</h2>
-         <p>content of the second blog post.....</p>
-       </section>
-
-
-    </main>
-
-    <footer>
-        
-        <p>
-            
-         @ 2024 my simple blog 
-        </p>
-            
-    </footer>
-
-
-
-
-
-
+      // Show the Moye Moye GIF
+      document.getElementById('gif-container').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
